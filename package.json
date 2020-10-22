@@ -1,0 +1,33 @@
+{
+    "name": "jsramverk-project-socket",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "nodemon server.js",
+        "production": "NODE_ENV='production' node server.js",
+        "test": "echo \"Error: no test specified\" && exit 0",
+        "posttest": "npm run eslint",
+        "eslint":  "eslint ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Toddez/jsramverk-project-socket.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Toddez/jsramverk-project-socket/issues"
+    },
+    "homepage": "https://github.com/Toddez/jsramverk-project-socket#readme",
+    "devDependencies": {
+        "eslint": "^7.11.0",
+        "nodemon": "^2.0.6"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongodb": "^3.6.2",
+        "socket.io": "^2.3.0"
+    }
+}
