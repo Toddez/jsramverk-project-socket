@@ -59,9 +59,10 @@ let stocks = {};
             if (stocks[key]) {
                 const value = stocks[key];
 
+                const newValue = value[value.length - 1].value + (Math.random() > 0.5 ? 1 : -1);
                 const data = {
                     date: new Date().toISOString(),
-                    value: value[value.length - 1].value + (Math.random() > 0.5 ? 1 : -1)
+                    value: Math.max(0, newValue)
                 };
 
                 stocks[key].push(data);
