@@ -46,8 +46,8 @@ let stocks = {};
                     if (value) {
                         const now = new Date();
                         return Math.abs(now - new Date(value.date)) / 3.6e6 <= 5;
-                }
-            });
+                    }
+                });
 
                 socket.emit('stock correction', { id: message.id, value: filtered, name: stock.name });
             });
@@ -80,7 +80,7 @@ let stocks = {};
                 io.emit('stock update', { id: key, value: data });
             }
         }
-    }, 1000);
+    }, 30000);
 
     server.listen(port, () => {
         console.log(`Running socket server on port ${port}`);
