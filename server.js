@@ -42,9 +42,14 @@ let stocks = {};
                     return;
                 }
 
-                if (message.latest !== stock.value[stock.value.length - 1].date) {
-                    socket.emit('stock correction', { id: message.id, value: stock.value });
+                const filtered = stock.value.filter((value) => {
+                    if (value) {
+                        const now = new Date();
+                        return Math.abs(now - new Date(value.date)) / 3.6e6 <= 5;
                 }
+            });
+
+                socket.emit('stock correction', { id: message.id, value: filtered, name: stock.name });
             });
         });
     });
