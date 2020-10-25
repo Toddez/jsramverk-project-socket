@@ -1,5 +1,16 @@
 # jsramverk-project-socket
 
+## Installation
+Installera `mongodb` server lokalt.  
+Installera jsramverk-project-API och kör `npm run migrate`
+
+``npm install``  
+Installerar samtliga moduler.
+
+## Körning
+``npm start``  
+Startar en development server på port 3001.
+
 ## Val av teknik
 - Socket&period;io  
 Jag valde att fortsätta använda Socket&period;io från tidigare i kursen då jag redan känner att jag har koll på det istället för att börja med ett nytt paket för projektet. Jag använder sockets för att se till att användare som ansluter har de senaste priserna och för att sedan uppdatera priserna för samtliga aktier och skicka den datan till anslutna användare.
